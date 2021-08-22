@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1000.0" prefWidth="1200.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="1000.0" prefWidth="1200.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <Label layoutX="383.0" layoutY="20.0" text="KUTU SAYMA METHODU İLE" textFill="#e707f7">
          <font>
@@ -19,14 +19,6 @@
             <Font name="Segoe Script" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="fotoğrafYolu" layoutX="243.0" layoutY="166.0" prefHeight="26.0" prefWidth="741.0" promptText="FOTOĞRAF YOLU">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></TextField>
-      <TextField fx:id="adımSayısı" layoutX="243.0" layoutY="199.0" prefHeight="26.0" prefWidth="742.0" promptText="TEKRAR SAYISI">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></TextField>
       <Label layoutX="118.0" layoutY="169.0" textFill="#e707f7">
          <font>
             <Font size="14.0" />
@@ -37,7 +29,20 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="OkButton" layoutX="925.0" layoutY="236.0" mnemonicParsing="false" onAction="#displayImage" style="-fx-background-color: #e707f7;" text="TAMAM" />
-      <ImageView fx:id="imageview" fitHeight="150.0" fitWidth="200.0" layoutX="29.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="OkButton" layoutX="556.0" layoutY="212.0" mnemonicParsing="false" onAction="#displayImage" style="-fx-background-color: #e707f7;" text="TAMAM" />
+      <TextField fx:id="tfbos" editable="false" layoutX="203.0" layoutY="88.0" prefHeight="26.0" prefWidth="806.0" promptText="  " style="-fx-background-color: black;" />
+      <TextField fx:id="fotoğrafYolu" alignment="CENTER" layoutX="279.0" layoutY="120.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" prefWidth="614.0" promptText="FOTOĞRAF YOLU" />
+      <TextField fx:id="adımSayısı" alignment="CENTER" layoutX="279.0" layoutY="166.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" prefWidth="614.0" promptText="ADIM SAYISI" />
+      <ImageView fx:id="imageview0" fitHeight="150.0" fitWidth="200.0" layoutX="45.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageview01" fitHeight="150.0" fitWidth="200.0" layoutX="333.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageview02" fitHeight="150.0" fitWidth="200.0" layoutX="693.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageview03" fitHeight="150.0" fitWidth="200.0" layoutX="33.0" layoutY="465.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageview04" fitHeight="150.0" fitWidth="200.0" layoutX="369.0" layoutY="471.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageview05" fitHeight="150.0" fitWidth="200.0" layoutX="729.0" layoutY="509.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageview06" fitHeight="150.0" fitWidth="200.0" layoutX="33.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageview07" fitHeight="150.0" fitWidth="200.0" layoutX="433.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageview08" fitHeight="150.0" fitWidth="200.0" layoutX="715.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageview09" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="703.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imageview010" fitHeight="150.0" fitWidth="200.0" layoutX="486.0" layoutY="647.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

@@ -1,5 +1,6 @@
 package sample;
 
+import Picture.Picture;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -15,12 +16,42 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import java.io.File;
 import java.net.URL;
+import Action.Action;
 
 
 public class Controller {
 
     @FXML
-    private ImageView imageview;
+    private ImageView imageview0;
+    @FXML
+    private ImageView imageview01;
+
+    @FXML
+    private ImageView imageview02;
+
+    @FXML
+    private ImageView imageview03;
+
+    @FXML
+    private ImageView imageview04;
+
+    @FXML
+    private ImageView imageview05;
+
+    @FXML
+    private ImageView imageview06;
+
+    @FXML
+    private ImageView imageview07;
+
+    @FXML
+    private ImageView imageview08;
+
+    @FXML
+    private ImageView imageview09;
+
+    @FXML
+    private ImageView imageview010;
     @FXML
     private URL location;
     @FXML
@@ -31,17 +62,19 @@ public class Controller {
 
     @FXML
     private Button OkButton;
-// "C:\\Users\\Sinem Dönmez\\OneDrive\\Belgeler\\GitHub\\FractalDimensionWithBoxCountingMethod-\\src\\sample\\a.png"
+// "C:/Users/Sinem Dönmez/OneDrive/Belgeler/GitHub/FractalDimensionWithBoxCountingMethod-/src/sample/a.png"
 
 
 public void displayImage(){
 
 
+    String fotoYoluString=fotoğrafYolu.getText();
+    int tekrarSayısı=Integer.parseInt(adımSayısı.getText());
+    File file = new File(fotoYoluString);
+    Action.CalculateFractalDimension(tekrarSayısı, new Picture(file));
 
-    File file = new File("C:/Users/Sinem Dönmez/OneDrive/Belgeler/GitHub/FractalDimensionWithBoxCountingMethod-/src/sample/a.png");
     Image image = new Image(file.toURI().toString());
-
-    imageview.setImage(image);
+    imageview0.setImage(image);
 
 
 

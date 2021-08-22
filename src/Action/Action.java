@@ -1,16 +1,17 @@
 package Action;
 import Picture.Picture;
 import java.awt.Color;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Action {
-    public int log2(int N)
+    public static int log2(int N)
         {
             int result = (int)(Math.log(N) / Math.log(2));
             return result;
         }
 
-    public ArrayList<String> CalculateFractalDimension(int tekrarSayısı, String foto){
+    public static ArrayList<String> CalculateFractalDimension(int tekrarSayısı, Picture foto){
     ArrayList<String> arr =new ArrayList<>();
         //String foto="C:\\Users\\Sinem Dönmez\\OneDrive\\Belgeler\\GitHub\\FractalDimensionWithBoxCountingMethod-\\src\\sample\\a.png";
 
@@ -48,7 +49,7 @@ public class Action {
                             }
 
                 y[log2(f)-1]=say;
-                arr.add("E="+ "1/"+f +" iken N(E)="+y[log2(f)-1]+" olur.");
+                System.out.println("E="+ "1/"+f +" iken N(E)="+y[log2(f)-1]+" olur.");
             }
 
             double say2=0;
@@ -66,65 +67,68 @@ public class Action {
             say5=(say5+(x[i]*x[i]));}
 
             double dim=(tekrarSayısı*say2-(say3*say4))/(tekrarSayısı*say5-(say3*say3));
-            arr.add("Şeklin fraktal boyutu yaklaşık olarak "+dim+ " dir.");
+        System.out.println("Şeklin fraktal boyutu yaklaşık olarak "+dim+ " dir.");
             return arr;
 
     }
 
-    public void GridMaker(){
-        String foto="C:\\Users\\Sinem Dönmez\\OneDrive\\Belgeler\\GitHub\\FractalDimensionWithBoxCountingMethod-\\src\\sample\\a.png";
+    public static void GridMaker(Picture foto,int tekrarSayısı){
+
         Color renk1=new Color(0,0,0);
-        int tekrarSayısı=10;
-        Picture a=new Picture(foto);
 
-
-        for(int n=1;n<=128;n++)
-            for(int i=0; i<a.height();i++)
-                for(int j=0; j<a.width(); j++) {
-                    if(i==n*(a.width()/128) ||j==n*(a.height()/128) )
+       for(int m=1;m<=tekrarSayısı;m+=1){
+        for(int n=1;n<tekrarSayısı;n+=1)
+            for(int i=0; i<foto.height();i+=1)
+                for(int j=0; j<foto.width(); j+=1) {
+                    if(i==(int)((n*foto.width())/(Math.pow(2,m))) || j==(int)((n*foto.height())/((Math.pow(2,m)))) )
                         renk1=new Color(0,0,0);
                     else
-                        renk1=a.get(j, i);
-                    a.set(j, i, renk1);
+                        renk1=foto.get( j, i);
+                    foto.set(j, i, renk1);
                 }
-        a.show();
+               File file = new File("C:\\Users\\Sinem Dönmez\\OneDrive\\Belgeler\\GitHub\\FractalDimensionWithBoxCountingMethod-\\src\\sample\\a"+(m)+".png");
+                    foto.save(file);
+                }
+
     }
 
 
 
 
- public void BlackWhite(){
-        String foto="C:\\Users\\Sinem Dönmez\\OneDrive\\Belgeler\\GitHub\\FractalDimensionWithBoxCountingMethod-\\src\\sample\\a.png";
+ public static Picture BlackWhite(Picture foto){
+
         Color renk1=new Color(0,0,0);
-        int tekrarSayısı=10;
-        Picture a=new Picture(foto);
+
+
         Color renk2;
-        for(int i=0; i<a.width();i++ )
-            for(int j=0; j<a.height();j++ ){
-                Color renk =a.get(i, j);
+        for(int i=0; i<foto.width();i++ )
+            for(int j=0; j<foto.height();j++ ){
+                Color renk =foto.get(i, j);
                 int b =renk.getBlue();
                 int g=renk.getGreen();
                 int r=renk.getRed();
                 if(r>=200 && g>=200 && b>=200)
                     renk2=new Color(255,255,255);
                     else
-                        renk2=a.get(i, j);
-                    a.set(i, j, renk2);
+                        renk2=foto.get(i, j);
+                    foto.set(i, j, renk2);
+
                 };
             Color renk3;
-            for(int i=0; i<a.width();i++ )
-                for(int j=0; j<a.height();j++ ){
-                    Color renk =a.get(i, j);
+            for(int i=0; i<foto.width();i++ )
+                for(int j=0; j<foto.height();j++ ){
+                    Color renk =foto.get(i, j);
                     int b =renk.getBlue();
                     int g=renk.getGreen();
                     int r=renk.getRed();
                     if(r<=55 && g<=55 && b<=55)
                         renk3=new Color(0,0,0);
                     else
-                        renk3=a.get(i, j);
-                    a.set(i, j, renk3);
+                        renk3=foto.get(i, j);
+                    foto.set(i, j, renk3);
                 }
-            a.show();
+                foto.save("a");
+                return foto;
 
         }
 }
