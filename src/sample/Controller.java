@@ -71,14 +71,15 @@ public void displayImage(){
     String fotoYoluString=fotoğrafYolu.getText();
     int tekrarSayısı=Integer.parseInt(adımSayısı.getText());
     File file = new File(fotoYoluString);
-    Action.CalculateFractalDimension(tekrarSayısı, new Picture(file));
-
     Image image = new Image(file.toURI().toString());
     imageview0.setImage(image);
+    Action.GridMaker(new Picture(file),tekrarSayısı);
+    Action.CalculateFractalDimension(tekrarSayısı, new Picture(file));}
 
-
-
-
+public void hesapla(){
+    imageview01.setImage(new Image(getClass().getResourceAsStream("a1.png")));
+    imageview02.setImage(new Image(getClass().getResourceAsStream("a2.png")));
+    imageview03.setImage(new Image(getClass().getResourceAsStream("a3.png")));
 
 }
 }

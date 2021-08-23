@@ -24,6 +24,7 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
 
-        Action.GridMaker(new Picture("C:/Users/Sinem Dönmez/OneDrive/Belgeler/GitHub/FractalDimensionWithBoxCountingMethod-/src/sample/a.png"),8);
+        //Action.GridMaker(new Picture("C:/Users/Sinem Dönmez/OneDrive/Belgeler/GitHub/FractalDimensionWithBoxCountingMethod-/src/sample/a.png"),8);
+        //Action.CalculateFractalDimension(8,new Picture("C:/Users/Sinem Dönmez/OneDrive/Belgeler/GitHub/FractalDimensionWithBoxCountingMethod-/src/sample/a.png"));
     }
 }

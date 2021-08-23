@@ -77,10 +77,10 @@ public class Action {
         Color renk1=new Color(0,0,0);
 
        for(int m=1;m<=tekrarSayısı;m+=1){
-        for(int n=1;n<tekrarSayısı;n+=1)
+        for(int n=1;n<(int)(Math.pow(2,tekrarSayısı));n+=1)
             for(int i=0; i<foto.height();i+=1)
                 for(int j=0; j<foto.width(); j+=1) {
-                    if(i==(int)((n*foto.width())/(Math.pow(2,m))) || j==(int)((n*foto.height())/((Math.pow(2,m)))) )
+                    if(i==(int)((n*(foto.width())/(Math.pow(2,m)))) || j==(int)((n*(foto.height())/((Math.pow(2,m))))) )
                         renk1=new Color(0,0,0);
                     else
                         renk1=foto.get( j, i);
