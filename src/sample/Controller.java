@@ -44,11 +44,6 @@ public class Controller  {
 
 // "C:/Users/Sinem Dönmez/OneDrive/Belgeler/GitHub/FractalDimensionWithBoxCountingMethod-/src/sample/a.png"
 
-
-
-
-
-
     public void displayImage(){
 
 

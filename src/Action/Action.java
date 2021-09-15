@@ -13,14 +13,13 @@ public class Action {
 
     public static ArrayList<String> CalculateFractalDimension(int tekrarSayısı, Picture foto){
     ArrayList<String> arr =new ArrayList<>();
-        //String foto="C:\\Users\\Sinem Dönmez\\OneDrive\\Belgeler\\GitHub\\FractalDimensionWithBoxCountingMethod-\\src\\sample\\a.png";
 
-            //int tekrarSayısı=5;
-            Picture a=new Picture(foto);
+
+
 
             double[]x=new double[tekrarSayısı];
             for(int i=0;i<tekrarSayısı;i++)
-            x[i]=Math.log(Math.pow(2, i+1));
+                x[i]=Math.log(Math.pow(2, i+1));
 
 
             int kontrol1=845485445;
@@ -28,16 +27,18 @@ public class Action {
 
             double[]y= new double[tekrarSayısı];
             double[]z= new double[tekrarSayısı];
-            double say;
-
+            int say=0;
+            double width=foto.width();
+            double height=foto.height();
 
             for(int f=2;f<=Math.pow(2,tekrarSayısı);f+=f) {
                 say=0;
+
                 for(int n=1;n<=f;n++)
                     for(int m=1;m<=f;m++)
-                        for(int i=(n-1)*(a.height()/f); i<n*(a.height()/f);i++)
-                            for(int j=(m-1)*(a.width()/f); j<m*(a.width()/f); j++){
-                                Color renk =a.get(j, i);
+                        for(int i=(int)((n-1)*(height/f)); i<(int)(n*(height/f));i++)
+                            for(int j=(int)((m-1)*(width/f)); j<(int)(m*(width/f)); j++){
+                                Color renk =foto.get(j, i);
                                 int r=renk.getRed();
                                 int g=renk.getGreen();
                                 int b=renk.getBlue();
@@ -52,10 +53,7 @@ public class Action {
                 arr.add("E="+ "1/"+f +" iken N(E)="+y[log2(f)-1]+" olur.");
             }
 
-            double say2=0;
-            double say3=0;
-            double say4=0;
-            double say5=0;
+            double say2=0,say3=0,say4=0,say5=0;
 
 
             for(int i=0;i<tekrarSayısı;i++) {

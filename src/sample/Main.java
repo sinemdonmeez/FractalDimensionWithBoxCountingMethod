@@ -23,7 +23,38 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
+/*
+        Picture foto=new Picture("C:/Users/Sinem Dönmez/OneDrive/Belgeler/GitHub/FractalDimensionWithBoxCountingMethod-/src/sample/b.png");
+        Color renk1=new Color(0,0,0);
 
 
+        Color renk2;
+        for(int i=0; i<foto.width();i++ )
+            for(int j=0; j<foto.height();j++ ){
+                Color renk =foto.get(i, j);
+                int b =renk.getBlue();
+                int g=renk.getGreen();
+                int r=renk.getRed();
+                if(r>=200 && g>=200 && b>=200)
+                    renk2=new Color(255,255,255);
+                else
+                    renk2=foto.get(i, j);
+                foto.set(i, j, renk2);
+
+            };
+        Color renk3;
+        for(int i=0; i<foto.width();i++ )
+            for(int j=0; j<foto.height();j++ ){
+                Color renk =foto.get(i, j);
+                int b =renk.getBlue();
+                int g=renk.getGreen();
+                int r=renk.getRed();
+                if(r<=55 && g<=55 && b<=55)
+                    renk3=new Color(0,0,0);
+                else
+                    renk3=foto.get(i, j);
+                foto.set(i, j, renk3);
+            }
+        foto.save("b.png");*/
     }
 }
