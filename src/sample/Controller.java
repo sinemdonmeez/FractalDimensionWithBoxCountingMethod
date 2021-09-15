@@ -1,8 +1,13 @@
 package sample;
 
 import Picture.Picture;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.application.Application;
@@ -16,42 +21,18 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import java.io.File;
 import java.net.URL;
+import java.util.ResourceBundle;
+
 import Action.Action;
 
 
-public class Controller {
+public class Controller  {
 
     @FXML
-    private ImageView imageview0;
+    private ImageView myImageview;
     @FXML
-    private ImageView imageview01;
+    private ListView<?> myListview;
 
-    @FXML
-    private ImageView imageview02;
-
-    @FXML
-    private ImageView imageview03;
-
-    @FXML
-    private ImageView imageview04;
-
-    @FXML
-    private ImageView imageview05;
-
-    @FXML
-    private ImageView imageview06;
-
-    @FXML
-    private ImageView imageview07;
-
-    @FXML
-    private ImageView imageview08;
-
-    @FXML
-    private ImageView imageview09;
-
-    @FXML
-    private ImageView imageview010;
     @FXML
     private URL location;
     @FXML
@@ -60,26 +41,32 @@ public class Controller {
     @FXML
     private TextField adımSayısı;
 
-    @FXML
-    private Button OkButton;
+
 // "C:/Users/Sinem Dönmez/OneDrive/Belgeler/GitHub/FractalDimensionWithBoxCountingMethod-/src/sample/a.png"
 
 
-public void displayImage(){
+
+
+
+
+    public void displayImage(){
 
 
     String fotoYoluString=fotoğrafYolu.getText();
-    int tekrarSayısı=Integer.parseInt(adımSayısı.getText());
+
     File file = new File(fotoYoluString);
     Image image = new Image(file.toURI().toString());
-    imageview0.setImage(image);
-    Action.GridMaker(new Picture(file),tekrarSayısı);
-    Action.CalculateFractalDimension(tekrarSayısı, new Picture(file));}
+    myImageview.setImage(image);
+        Picture picture = new Picture(file.toURI().toString());
 
-public void hesapla(){
-    imageview01.setImage(new Image(getClass().getResourceAsStream("a1.png")));
-    imageview02.setImage(new Image(getClass().getResourceAsStream("a2.png")));
-    imageview03.setImage(new Image(getClass().getResourceAsStream("a3.png")));
+        ObservableList fractalDim = FXCollections.observableArrayList();
+        for(String i: Action.CalculateFractalDimension(Integer.parseInt(adımSayısı.getText()),picture))
+            fractalDim.add(i);
+        myListview.setItems(fractalDim);
 
-}
+
+
+   }
+
+
 }

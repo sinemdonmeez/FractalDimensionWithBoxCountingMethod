@@ -15,8 +15,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 1200, 1000));
+        primaryStage.setTitle("KUTU SAYMA YÖNTEMİ İLE FRAKTAL BOYUT HESAPLAMA");
+        primaryStage.setScene(new Scene(root, 640, 1000));
         primaryStage.show();
     }
 
@@ -24,7 +24,6 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
 
-        //Action.GridMaker(new Picture("C:/Users/Sinem Dönmez/OneDrive/Belgeler/GitHub/FractalDimensionWithBoxCountingMethod-/src/sample/a.png"),8);
-        //Action.CalculateFractalDimension(8,new Picture("C:/Users/Sinem Dönmez/OneDrive/Belgeler/GitHub/FractalDimensionWithBoxCountingMethod-/src/sample/a.png"));
+
     }
 }

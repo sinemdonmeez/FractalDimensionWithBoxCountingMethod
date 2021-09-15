@@ -49,7 +49,7 @@ public class Action {
                             }
 
                 y[log2(f)-1]=say;
-                System.out.println("E="+ "1/"+f +" iken N(E)="+y[log2(f)-1]+" olur.");
+                arr.add("E="+ "1/"+f +" iken N(E)="+y[log2(f)-1]+" olur.");
             }
 
             double say2=0;
@@ -67,7 +67,7 @@ public class Action {
             say5=(say5+(x[i]*x[i]));}
 
             double dim=(tekrarSayısı*say2-(say3*say4))/(tekrarSayısı*say5-(say3*say3));
-        System.out.println("Şeklin fraktal boyutu yaklaşık olarak "+dim+ " dir.");
+        arr.add("Şeklin fraktal boyutu yaklaşık olarak "+dim+ " dir.");
             return arr;
 
     }

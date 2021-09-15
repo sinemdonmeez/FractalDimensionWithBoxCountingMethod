@@ -2,19 +2,20 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="1000.0" prefWidth="1200.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="1000.0" prefWidth="640.0" style="-fx-background-color: BLACK;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Label layoutX="383.0" layoutY="20.0" text="KUTU SAYMA METHODU İLE" textFill="#e707f7">
+      <Label layoutX="105.0" layoutY="28.0" prefHeight="33.0" prefWidth="295.0" text="KUTU SAYMA YÖNTEMİ İLE" textFill="#e707f7">
          <font>
             <Font name="Segoe Script" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="557.0" layoutY="54.0" text="FRAKTAL BOYUT HESAPMLAMA" textFill="#e707f7">
+      <Label layoutX="282.0" layoutY="55.0" text="FRAKTAL BOYUT HESAPMLAMA" textFill="#e707f7">
          <font>
             <Font name="Segoe Script" size="18.0" />
          </font>
@@ -29,20 +30,61 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button fx:id="OkButton" layoutX="556.0" layoutY="212.0" mnemonicParsing="false" onAction="#displayImage" style="-fx-background-color: #e707f7;" text="TAMAM" />
+      <Button fx:id="OkButton" layoutX="289.0" layoutY="210.0" mnemonicParsing="false" onAction="#displayImage" style="-fx-background-color: #e707f7;" text="HESAPLA" />
       <TextField fx:id="tfbos" editable="false" layoutX="203.0" layoutY="88.0" prefHeight="26.0" prefWidth="806.0" promptText="  " style="-fx-background-color: black;" />
-      <TextField fx:id="fotoğrafYolu" alignment="CENTER" layoutX="279.0" layoutY="120.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" prefWidth="614.0" promptText="FOTOĞRAF YOLU" />
-      <TextField fx:id="adımSayısı" alignment="CENTER" layoutX="279.0" layoutY="166.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" prefWidth="614.0" promptText="ADIM SAYISI" />
-      <ImageView fx:id="imageview0" fitHeight="150.0" fitWidth="200.0" layoutX="45.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imageview01" fitHeight="150.0" fitWidth="200.0" layoutX="333.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imageview02" fitHeight="150.0" fitWidth="200.0" layoutX="693.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imageview03" fitHeight="150.0" fitWidth="200.0" layoutX="33.0" layoutY="465.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imageview04" fitHeight="150.0" fitWidth="200.0" layoutX="369.0" layoutY="471.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imageview05" fitHeight="150.0" fitWidth="200.0" layoutX="729.0" layoutY="509.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imageview06" fitHeight="150.0" fitWidth="200.0" layoutX="33.0" layoutY="594.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imageview07" fitHeight="150.0" fitWidth="200.0" layoutX="433.0" layoutY="559.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imageview08" fitHeight="150.0" fitWidth="200.0" layoutX="715.0" layoutY="530.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imageview09" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="703.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="imageview010" fitHeight="150.0" fitWidth="200.0" layoutX="486.0" layoutY="647.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="fotoğrafYolu" alignment="CENTER" layoutX="12.0" layoutY="114.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" prefWidth="614.0" promptText="FOTOĞRAF YOLU" />
+      <TextField fx:id="adımSayısı" alignment="CENTER" layoutX="12.0" layoutY="156.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" prefWidth="614.0" promptText="ADIM SAYISI" />
+      <ImageView fx:id="myImageview" fitHeight="329.0" fitWidth="397.0" layoutX="132.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="132.0" />
+      <ListView fx:id="myListview" layoutX="86.0" layoutY="628.0" prefHeight="293.0" prefWidth="471.0" style="-fx-background-color: black;" />
+      <Label fx:id="label1" alignment="CENTER" contentDisplay="BOTTOM" layoutX="223.0" layoutY="628.0" textFill="WHITE" AnchorPane.leftAnchor="223.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label2" alignment="CENTER" contentDisplay="BOTTOM" layoutX="227.0" layoutY="670.0" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label3" alignment="CENTER" contentDisplay="BOTTOM" layoutX="219.0" layoutY="707.0" prefHeight="27.0" prefWidth="387.0" textFill="WHITE" AnchorPane.leftAnchor="219.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label4" alignment="CENTER" contentDisplay="BOTTOM" layoutX="226.0" layoutY="741.0" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label5" alignment="CENTER" contentDisplay="CENTER" layoutX="333.0" layoutY="768.0" textFill="WHITE" AnchorPane.leftAnchor="223.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label6" alignment="CENTER" contentDisplay="CENTER" layoutX="333.0" layoutY="795.0" textFill="WHITE" AnchorPane.leftAnchor="223.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label7" alignment="CENTER" contentDisplay="CENTER" layoutX="333.0" layoutY="822.0" textFill="WHITE" AnchorPane.leftAnchor="223.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label8" alignment="CENTER" contentDisplay="CENTER" layoutX="333.0" layoutY="849.0" textFill="WHITE" AnchorPane.leftAnchor="223.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label9" alignment="CENTER" contentDisplay="CENTER" layoutX="333.0" layoutY="876.0" textFill="WHITE" AnchorPane.leftAnchor="223.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="label10" alignment="CENTER" contentDisplay="CENTER" layoutX="333.0" layoutY="903.0" textFill="WHITE" AnchorPane.leftAnchor="223.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
